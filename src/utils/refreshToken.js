@@ -10,4 +10,4 @@ const refreshTokenSetup = (res) => {
     setTimeout(refreshToken, refreshTiming);
 }
 
-module.exports = refreshTokenSetup;
+module.exports = {refreshTokenSetup: refreshTokenSetup};
