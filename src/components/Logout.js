@@ -1,12 +1,12 @@
 import React from 'react';
 import { GoogleLogout } from 'react-google-login';
+require('dotenv').config();
 
-
-const clientId = 'BLABLA';
-
+const clientId = process.env.REACT_APP_CLIENT_ID+'.apps.googleusercontent.com';
+console.log(clientId);
 const Logout = () => {
-    const onSuccess = (res) => {
-        console.log(`Logout success, current user ${res.profileObj}`);
+    const onSuccess = () => {
+        alert(`Logout success, current`);
     }
 
     return ( 

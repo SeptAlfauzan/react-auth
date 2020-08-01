@@ -1,12 +1,15 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login';
+import {refreshTokenSetup} from '../utils/refreshToken.js'
+require('dotenv').config();
 
-
-const clientId = 'BLABLA';
-
+const clientId = process.env.REACT_APP_CLIENT_ID+'.apps.googleusercontent.com';
+console.log(clientId);
 const Login = () => {
     const onSuccess = (res) => {
         console.log(`login success, current user ${res.profileObj}`);
+
+        refreshTokenSetup(res);
     }
 
     const onFailure = (res) => {
